@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvTituloTarjeton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TARJETÓN ELECTORAL"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:gravity="center"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvDatosElector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Elector habilitado (Mayor de edad)"
+            android:textSize="13sp"
+            android:textColor="@color/accent"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seleccione un candidato para la Alcaldía Municipal:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="16dp" />
+
+        <!-- HU-03: Selección de uno de los 3 candidatos con RadioGroup -->
+        <RadioGroup
+            android:id="@+id/rgCandidatos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp">
+
+            <!-- Candidato 1 -->
+            <RadioButton
+                android:id="@+id/rbCandidato1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="01. Carlos Alberto Gómez\nMovimiento Progreso Municipal"
+                android:textSize="15sp"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="#FFFFFF" />
+
+            <!-- Candidato 2 -->
+            <RadioButton
+                android:id="@+id/rbCandidato2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="02. María Fernanda Restrepo\nCoalición Transformación Ciudadana"
+                android:textSize="15sp"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="#FFFFFF" />
+
+            <!-- Candidato 3 -->
+            <RadioButton
+                android:id="@+id/rbCandidato3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="03. Andrés Felipe Morales\nAlianza por el Futuro"
+                android:textSize="15sp"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="#FFFFFF" />
+
+        </RadioGroup>
+
+        <!-- HU-03 & HU-04: Botón para confirmar voto -->
+        <Button
+            android:id="@+id/btnVotar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirmar y Depositar Voto"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:minHeight="54dp"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btnCancelar"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancelar y Volver"
+            android:textColor="@color/text_secondary" />
+
+    </LinearLayout>
+</ScrollView>

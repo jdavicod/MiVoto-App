@@ -1,0 +1,6 @@
+{
+  "name": "Conteo Electoral",
+  "description": "Sistema de conteo electoral para votación a la alcaldía municipal con validación de edad y registro de votos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

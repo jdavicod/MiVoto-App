@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tvAdminHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MÓDULO ADMINISTRADOR"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- SECCIÓN 1: HU-06 Configuración de Electores Habilitados -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. Configuración de Censo (HU-06)"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@color/primary"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <EditText
+                android:id="@+id/etCenso"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Total electores (ej: 100)"
+                android:inputType="number"
+                android:minHeight="48dp" />
+
+            <Button
+                android:id="@+id/btnGuardarCenso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guardar"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- SECCIÓN 2: HU-09 y HU-10 Resultados del Escrutinio -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. Escrutinio y Resultados (HU-09 / HU-10)"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@color/primary"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Conteo por candidato (HU-09) -->
+        <TextView
+            android:id="@+id/tvResultados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:text="Cargando conteo..."
+            android:layout_marginBottom="12dp" />
+
+        <!-- Ganador y Diferencia con 2do lugar (HU-10) -->
+        <TextView
+            android:id="@+id/tvDiferencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ECFDF5"
+            android:padding="16dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#065F46"
+            android:text="Diferencia de votos..."
+            android:layout_marginBottom="24dp" />
+
+        <!-- SECCIÓN 3: HU-07 y HU-08 Listado y Auditoría de Votos -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. Listado de Votos Registrados (HU-07 / HU-08)"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@color/primary"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Toque cualquier voto para eliminarlo (sin edición):"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="8dp" />
+
+        <ListView
+            android:id="@+id/lvVotos"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:background="#FFFFFF"
+            android:divider="#E2E8F0"
+            android:dividerHeight="1dp"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnVolverVotacion"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volver a Pantalla de Votación"
+            android:minHeight="48dp" />
+
+    </LinearLayout>
+</ScrollView>

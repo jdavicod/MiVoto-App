@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ConteoElectoral"
+        tools:targetApi="31">
+        
+        <!-- Pantalla de Inicio / Validación del Elector (Épica 1: HU-01, HU-02, HU-05) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Pantalla de Selección de Candidato y Registro (Épica 1: HU-03, HU-04) -->
+        <activity
+            android:name=".VotacionActivity"
+            android:exported="false"
+            android:label="@string/titulo_votacion"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Pantalla de Módulo Administrador (Épica 2: HU-06, HU-07, HU-08, HU-09, HU-10) -->
+        <activity
+            android:name=".AdminActivity"
+            android:exported="false"
+            android:label="@string/titulo_admin"
+            android:parentActivityName=".MainActivity" />
+
+    </application>
+
+</manifest>

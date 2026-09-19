@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Conteo Electoral</string>
+    <string name="titulo_votacion">Tarjetón Electoral</string>
+    <string name="titulo_admin">Módulo Administrador</string>
+
+    <!-- Épica 1: Votación -->
+    <string name="hint_documento">Número de Documento (C.C. / T.I.)</string>
+    <string name="hint_edad">Edad del elector</string>
+    <string name="btn_validar_votar">Validar y Continuar a Votar</string>
+    <string name="btn_ir_admin">Acceso Administrador</string>
+    <string name="error_campo_vacio">Este campo no puede estar vacío</string>
+    <string name="error_edad_menor">El elector es menor de 18 años y no está habilitado para votar.</string>
+    <string name="error_ya_voto">El elector ya registró su voto previamente.</string>
+
+    <!-- Candidatos -->
+    <string name="candidato_1">01. Carlos Alberto Gómez - Mov. Progreso Municipal</string>
+    <string name="candidato_2">02. María Fernanda Restrepo - Coalición Ciudadana</string>
+    <string name="candidato_3">03. Andrés Felipe Morales - Alianza por el Futuro</string>
+    <string name="btn_confirmar_voto">Confirmar y Registrar Voto</string>
+
+    <!-- Épica 2: Admin -->
+    <string name="hint_censo">Total de electores habilitados</string>
+    <string name="btn_guardar_censo">Configurar Censo</string>
+    <string name="titulo_escrutinio">Resultados del Escrutinio</string>
+    <string name="btn_eliminar_voto">Eliminar Voto</string>
+</resources>
