@@ -114,6 +114,11 @@ export function deleteVoteFromStorage(voteId: string): boolean {
   return true;
 }
 
+export function resetAllCounts(): void {
+  saveStoredVotes([]);
+  saveStoredVoters([]);
+}
+
 export function calculateElectionResults(): ElectionResultsSummary {
   const votes = getStoredVotes();
   const maxElectors = getMaxElectors();

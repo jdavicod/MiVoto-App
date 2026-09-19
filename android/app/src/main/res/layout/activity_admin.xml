@@ -88,6 +88,17 @@
             android:textStyle="bold"
             android:textColor="#065F46"
             android:text="Diferencia de votos..."
+            android:layout_marginBottom="12dp" />
+
+        <!-- Botón para reiniciar todos los conteos -->
+        <Button
+            android:id="@+id/btnReiniciarConteos"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reiniciar Todos los Conteos"
+            android:textColor="#DC2626"
+            android:minHeight="48dp"
             android:layout_marginBottom="24dp" />
 
         <!-- SECCIÓN 3: HU-07 y HU-08 Listado y Auditoría de Votos -->

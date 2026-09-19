@@ -25,6 +25,7 @@ class AdminActivity : AppCompatActivity() {
     private lateinit var btnGuardarCenso: Button
     private lateinit var tvResultados: TextView
     private lateinit var tvDiferencia: TextView
+    private lateinit var btnReiniciarConteos: Button
     private lateinit var lvVotos: ListView
     private lateinit var btnVolverVotacion: Button
 
@@ -39,6 +40,7 @@ class AdminActivity : AppCompatActivity() {
         btnGuardarCenso = findViewById(R.id.btnGuardarCenso)
         tvResultados = findViewById(R.id.tvResultados)
         tvDiferencia = findViewById(R.id.tvDiferencia)
+        btnReiniciarConteos = findViewById(R.id.btnReiniciarConteos)
         lvVotos = findViewById(R.id.lvVotos)
         btnVolverVotacion = findViewById(R.id.btnVolverVotacion)
 
@@ -68,6 +70,11 @@ class AdminActivity : AppCompatActivity() {
             sharedPrefs.edit().putInt("CENSO_TOTAL_ELECTORES", censo).apply()
             Toast.makeText(this, "Censo configurado con éxito: $censo electores.", Toast.LENGTH_SHORT).show()
             cargarResultadosYVotos()
+        }
+
+        // Reiniciar todos los conteos con confirmación de seguridad
+        btnReiniciarConteos.setOnClickListener {
+            mostrarConfirmacionReinicioConteos()
         }
 
         // HU-08: Eliminar voto seleccionado (sin poder editarlo)
@@ -134,6 +141,21 @@ class AdminActivity : AppCompatActivity() {
             .setNegativeButton("Cancelar") { _, _ ->
                 finish()
             }
+            .show()
+    }
+
+    private fun mostrarConfirmacionReinicioConteos() {
+        AlertDialog.Builder(this)
+            .setTitle("¿Reiniciar Todos los Conteos?")
+            .setMessage("¿Está seguro de que desea reiniciar todos los conteos? Esta acción vaciará completamente la urna electoral y eliminará todos los votos registrados.")
+            .setPositiveButton("Sí, reiniciar") { _, _ ->
+                lifecycleScope.launch {
+                    db.votoDao().vaciarTodosLosVotos()
+                    Toast.makeText(this@AdminActivity, "Se han reiniciado todos los conteos de la elección.", Toast.LENGTH_SHORT).show()
+                    cargarResultadosYVotos()
+                }
+            }
+            .setNegativeButton("Cancelar", null)
             .show()
     }
 

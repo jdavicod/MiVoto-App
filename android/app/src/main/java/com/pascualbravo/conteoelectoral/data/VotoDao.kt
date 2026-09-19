@@ -39,4 +39,10 @@ interface VotoDao {
      */
     @Delete
     suspend fun eliminarVoto(voto: Voto)
+
+    /**
+     * Reinicia y vacía todos los votos de la base de datos SQLite.
+     */
+    @Query("DELETE FROM votos")
+    suspend fun vaciarTodosLosVotos()
 }
